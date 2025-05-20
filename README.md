@@ -147,42 +147,8 @@ Implement a local cache of user authentication state
 Allow limited app functionality without requiring fresh authentication
 Notify the user of connectivity issues and provide retry options
 UML Sequence Diagram
-+--------+                   +-------------------+                +-----------------+
-| Client |                   | Login Microservice|                | In-Memory Store |
-+--------+                   +-------------------+                +-----------------+
-    |                                 |                                  |
-    | 1. POST /api/auth/login         |                                  |
-    | (email, password)               |                                  |
-    |-------------------------------->|                                  |
-    |                                 | 2. Find user by email/password   |
-    |                                 |--------------------------------->|
-    |                                 |                                  |
-    |                                 | 3. Return user data              |
-    |                                 |<---------------------------------|
-    |                                 |                                  |
-    |                                 | 4. Generate token                |
-    |                                 |-------------------+              |
-    |                                 |                   |              |
-    |                                 |<------------------+              |
-    |                                 |                                  |
-    |                                 | 5. Store token in memory         |
-    |                                 |--------------------------------->|
-    |                                 |                                  |
-    | 6. Return token and user ID     |                                  |
-    |<--------------------------------|                                  |
-    |                                 |                                  |
-    | 7. Subsequent requests with     |                                  |
-    | Authorization: Bearer {token}   |                                  |
-    |-------------------------------->|                                  |
-    |                                 | 8. Verify token                  |
-    |                                 |--------------------------------->|
-    |                                 |                                  |
-    |                                 | 9. Return token validity         |
-    |                                 |<---------------------------------|
-    |                                 |                                  |
-    | 10. Return requested resource   |                                  |
-    |<--------------------------------|                                  |
-    |                                 |                                  |
+
+
 Implementation Notes
 This is a simplified implementation intended for demonstration and educational purposes. For production use, consider these enhancements:
 Persistent storage for user data
