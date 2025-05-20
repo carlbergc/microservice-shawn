@@ -1,5 +1,6 @@
 Login Microservice -Campbell Carlberg to Shawn Singharaj - Communication Contract
 Overview
+
 This document provides the communication contract for the simplified Login Microservice designed for Shawn's Calendar/Planner application. The microservice handles user authentication using Node.js's built-in HTTP module and memory storage.
 Version: Simplified Implementation
 Service URL: http://localhost:5555
